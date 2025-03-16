@@ -59,51 +59,6 @@ def findByCreateDate(date) :
     except PyMongoError as e :
         logging.error("DB Error = %s",  e)
 
-# def insert_logo_Info(user_id, logo_src, logo_name) :
-#     try :
-#         result = collection.update_one(
-#             {"_id" : user_id},
-#             {"$push" : {"logo" : [{"logo_name" : logo_name,
-#                                     "logo_src" : logo_src,
-#                                    "createDate" : datetime.now()}]}}
-#         )
-
-#         if result.modified_count > 0:
-#             logging.info("[id= %s] logo DB 저장 성공 [logo_src = %s] [logo_name = %s]", user_id, logo_src, logo_name)
-#             return True
-#         else:
-#             logging.error("[id= %s] logo DB 저장 실패 [logo_src = %s] [logo_name = %s]", user_id, logo_src, logo_name)
-#             return False
-#     except PyMongoError as e:
-#         logging.error("[id= %s] [logo_src = %s] [logo_name = %s]DB Error : %s", user_id, logo_src, logo_name, e)
-#         return False
-    
-
-
-# def insert_logo_Info(user_id, logo_src, prompt) :
-#     try :
-#         doc = findByUserId(user_id)
-#         print(doc) 
-
-#         print(user_id , logo_src, datetime.now().strftime('%Y-%m-%d'))
-#         result = collection.update_one(
-#             {"user_id" : user_id},
-#             {"$push" : {"logo" : {
-#                                     "logo_src" : logo_src,
-#                                     "prompt" : prompt,
-#                                    "createDate" : datetime.now()}}}
-#         )
-
-#         if result.modified_count > 0:
-#             logging.info("[id= %s] logo DB 저장 성공 [logo_src = %s]", user_id, logo_src )
-#             return True
-#         else:
-#             logging.error("[id= %s] logo DB 저장 실패 [logo_src = %s] ", user_id, logo_src )
-#             return False
-        
-#     except PyMongoError as e:
-#         logging.error("[id= %s] [logo_src = %s] DB Error : %s", user_id, logo_src, e)
-#         return False
     
 
 
